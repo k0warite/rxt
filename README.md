@@ -35,6 +35,7 @@ $ npm run -D rxt-runtime # Install this as a runtime dependency
 $ npm run -s rxt-runtime # Install this as a development dependency
 ```
 It is most recommend to install this as a runtime dependecny rather than globally.
+> This module haven't been published to NPM yet since it's still in rapid development
 
 # API
 For runtime API documentation, please read the [`API.md`](https://github.com/Farixsm/rxt/blob/main/doc/API.md 'API.md') file
