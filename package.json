@@ -1,0 +1,45 @@
+{
+    "name": "rxt",
+    "version": "1.0.0",
+    "description": "An easy to use WASM runtime.",
+    "main": "dist/api.js",
+    "type": "module",
+    "scripts": {
+        "test": "npx mocha",
+        "build": "npx tsc",
+        "lint": "npm run build -- --noEmit",
+        "watch": "npm run build -- --watch",
+        "logo": "python build.py"
+    },
+    "bin": {
+        "rxt": "dist/cli.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Farxism/rxt.git"
+    },
+    "keywords": [
+        "rxt",
+        "wasm",
+        "runtime"
+    ],
+    "engines": {
+        "node": ">=12"
+    },
+    "author": "Farixsm",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Farxism/rxt/issues"
+    },
+    "homepage": "https://github.com/Farxism/rxt#readme",
+    "devDependencies": {
+        "@types/command-line-args": "^5.0.1",
+        "@types/node": "^16.3.1",
+        "mocha": "^9.0.2",
+        "prettier": "^2.3.2",
+        "typescript": "^4.3.5"
+    },
+    "dependencies": {
+        "command-line-args": "^5.1.3"
+    }
+}
