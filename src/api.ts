@@ -1,5 +1,10 @@
 import { readFileSync } from 'fs';
-import { RuntimeOptions } from '../types/global';
+import { RuntimeOptions } from '../types/index';
+import { internalLoader } from './internal_loader.js';
+
+const __module__ = {
+    logger: await internalLoader('./utils/logger.wasm'),
+}
 
 export class RXT {
     private wasm: Uint8Array;
@@ -23,7 +28,8 @@ export class RXT {
     constructor(wasm: string | Uint8Array, option?: RuntimeOptions) {
         if (typeof wasm === 'string') {
             if (!wasm.endsWith('.wasm')) {
-                //
+                console.log(__module__.logger.error(1, '[INVALID] The file extension is currently not supported'));
+                process.exit(1);
             }
 
             wasm = new Uint8Array(readFileSync(wasm).buffer);
@@ -31,6 +37,7 @@ export class RXT {
 
         if (!option) option = {};
         this.option = option;
+        this.wasm = wasm;
     }
 
     private async _optimize(): Promise<void> {}

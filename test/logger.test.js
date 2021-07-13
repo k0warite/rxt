@@ -1,16 +1,12 @@
 import { describe, it } from 'mocha';
-import { red, green } from '../dist/utils/color.js';
+import { internalLoader } from '../dist/internal_loader.js';
 
 describe('Logger', () => {
-    it('Red', () => {
-        console.assert(red('hello world') === '\x1b[31mhello world\x1b[0m');
-        console.assert(red('123') === '\x1b[31m123\x1b[0m');
-        console.assert(red(123) === '\x1b[31m123\x1b[0m');
-    });
+    it('Should not throw any error', async () => {
+        const __module__  = await internalLoader('./utils/logger.wasm');
 
-    it('Green', () => {
-        console.assert(green('hello world') === '\x1b[32mhello world\x1b[0m');
-        console.assert(green('123') === '\x1b[32m123\x1b[0m');
-        console.assert(green(123) === '\x1b[32m123\x1b[0m');
+        __module__.error(12, 'Test');
+        __module__.info(12, 'Test');
+        __module__.debug(12, 'Test');
     });
 });

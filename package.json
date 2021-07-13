@@ -1,18 +1,20 @@
 {
-    "name": "rxt",
+    "name": "rxt-runtime",
     "version": "1.0.0",
     "description": "An easy to use WASM runtime.",
-    "main": "dist/api.js",
+    "main": "./dist/api.js",
     "type": "module",
+    "types": "./src/export.ts",
     "scripts": {
         "test": "npx mocha",
         "build": "npx tsc",
         "lint": "npm run build -- --noEmit",
         "watch": "npm run build -- --watch",
-        "logo": "python build.py"
+        "logo": "python build.py",
+        "wasm": "python asbuild.py"
     },
     "bin": {
-        "rxt": "dist/cli.js"
+        "rxt": "./dist/cli.js"
     },
     "repository": {
         "type": "git",
@@ -35,6 +37,7 @@
     "devDependencies": {
         "@types/command-line-args": "^5.0.1",
         "@types/node": "^16.3.1",
+        "assemblyscript": "^0.19.7",
         "mocha": "^9.0.2",
         "prettier": "^2.3.2",
         "typescript": "^4.3.5"
