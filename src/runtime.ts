@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import { RuntimeOptions } from '../types/index';
 import { internalLoader } from './internal_loader.js';
+// import { lib } from './lib.js';
 
 const __module__ = {
     logger: await internalLoader('./utils/logger.wasm'),
@@ -20,7 +21,7 @@ export class RXT {
      * @example
      * ```ts
      * const rxt: RXT = new RXT('./test.wasm', {
-     *   memory: new WebAssembly.Memory({ maximum: 100 }),
+     *   memory: new WebAssembly.Memory({ maximum: 100, initial: 10 }),
      *   fastFail: false
      * });
      * ```
@@ -57,5 +58,11 @@ export class RXT {
         if (optimize && optimize === true) {
             await this._optimize();
         }
+
+        const imports: WebAssembly.Imports = { env: {}, lib: {} };
+        if (this.option.memory instanceof WebAssembly.Memory) imports.env.memory = this.option.memory;
+        if (this.option.table instanceof WebAssembly.Table) imports.env.table = this.option.table;
+
+        const instance = new WebAssembly.Instance(this.wasm, imports);
     }
 }

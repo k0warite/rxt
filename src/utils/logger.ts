@@ -10,32 +10,26 @@ function blue(s: string): string {
     return `\x1b[94m${s}\x1b[0m`;
 }
 
-// @ts-ignore
-function debugCode(code: i32): string {
+function debugCode(code: number): string {
     return `[${blue(`RXT${code}`)}]`
 }
 
-// @ts-ignore
-function errorCode(code: i32): string {
+function errorCode(code: number): string {
     return `[${red(`RXT${code}`)}]`
 }
 
-// @ts-ignore
-function infoCode(code: i32): string {
+function infoCode(code: number): string {
     return `[${green(`RXT${code}`)}]`
 }
 
-// @ts-ignore
-export function info(code: i32, msg: string): string {
+export function info(code: number, msg: string): string {
     return `${infoCode(code)}: ${msg}`
 }
 
-// @ts-ignore
-export function debug(code: i32, msg: string): string {
+export function debug(code: number, msg: string): string {
     return `${debugCode(code)}: ${msg}`
 }
  
-// @ts-ignore
-export function error(code: i32, msg: string): string {
+export function error(code: number, msg: string): string {
     return `${errorCode(code)}: ${msg}`
 }
