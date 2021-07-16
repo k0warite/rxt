@@ -30,7 +30,6 @@ $ npm run build
 ### NPM
 You can also install this via NPM. Run one of the following:
 ```sh
-$ npm run -g rxt-runtime # Install globally
 $ npm run -D rxt-runtime # Install this as a runtime dependency
 $ npm run -s rxt-runtime # Install this as a development dependency
 ```
@@ -41,7 +40,7 @@ It is most recommend to install this as a runtime dependecny rather than globall
 For the runtime API documentation, please read the [`API.md`](https://github.com/kowarite/rxt/blob/main/doc/API.md 'API.md') file.
 
 # Example
-For some examples, you can check the [`example`]() folder.
+For some examples, you can check the [`example`](https://github.com/kowarite/rxt/blob/main/example) folder.
 
 # Support
 To show your support, add the following to your `README.md`:

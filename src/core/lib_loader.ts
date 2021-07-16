@@ -4,10 +4,10 @@ import { Lib } from '../../types/index';
 export async function libLoader(): Promise<Array<Lib>> {
     const lib: Array<Lib> = [];
 
-    for (const content of (await readdir('./libs/'))) {
-        if ((await stat(`./libs/${content}`)).isDirectory()) {
-            for (const _content of (await readdir(`./libs/${content}/`))) {
-                const mod: { [key: string]: CallableFunction } = await import(`../../libs/${content}/${_content}`);
+    for (const content of (await readdir('./lib/'))) {
+        if ((await stat(`./lib/${content}`)).isDirectory()) {
+            for (const _content of (await readdir(`./lib/${content}/`))) {
+                const mod: { [key: string]: CallableFunction } = await import(`../../lib/${content}/${_content}`);
 
                 for (const fn in mod) {
                     lib.push({
@@ -20,7 +20,7 @@ export async function libLoader(): Promise<Array<Lib>> {
         }
 
         else {
-            const mod: { [key: string]: CallableFunction } = await import(`../../libs/${content}`);
+            const mod: { [key: string]: CallableFunction } = await import(`../../lib/${content}`);
 
             for (const fn in mod) {
                 lib.push({

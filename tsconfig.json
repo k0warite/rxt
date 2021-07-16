@@ -18,7 +18,7 @@
         "node_modules/",
         "example/",
         "test/",
-        "libs/",
+        "lib",
         "doc/"
     ]
 }

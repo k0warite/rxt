@@ -8,6 +8,7 @@ export namespace Lib {
         i64: Typed<WebAssemblyType.i64>;
         f32: Typed<WebAssemblyType.f32>;
         f64: Typed<WebAssemblyType.f64>;
+        none: None;
     }
 
     interface env {
@@ -23,6 +24,7 @@ export namespace WebAssemblyType  {
     type i64 = number;
     type f32 = number;
     type f64 = number;
+    type none = null;
 }
 
 interface Typed<T> {
@@ -33,4 +35,10 @@ interface Typed<T> {
     division: (x: T, y: T) => T;
     square: (x: T) => T;
     cube: (x: T) => T;
+}
+
+interface None {
+    drop: () => void;
+    clone: () => void;
+    move: () => void;
 }
