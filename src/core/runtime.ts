@@ -5,6 +5,7 @@ import { abort, trace } from './internal.js';
 import { debug } from './logger.js';
 
 export class RXT {
+    public static map: Map<string, any> = new Map();
     private wasm: Uint8Array;
     private option: RuntimeOptions;
 
@@ -46,11 +47,13 @@ export class RXT {
      */
     public async run(): Promise<void> {
         const imports: WebAssembly.Imports = { env: {}, lib: {} };
-        if (this.option.memory instanceof WebAssembly.Memory) imports.env.memory = this.option.memory;
-        if (this.option.table instanceof WebAssembly.Table) imports.env.table = this.option.table;
+        if (this.option.memory instanceof WebAssembly.Memory) imports.env.mem = this.option.memory;
+        if (this.option.table instanceof WebAssembly.Table) imports.env.tbl = this.option.table;
 
         imports.env.abort = abort;
         imports.env.trace = trace;
+
+        RXT.map.set('memory', this.option.memory);
 
         for (const lib of await libLoader()) {
             imports.lib[lib.name] = lib.fn;

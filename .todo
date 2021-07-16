@@ -1,6 +1,3 @@
-String:
-* Process the bytes (i32) and convert them to string (on NodeJS)
-
 File system:
 * Ability to import `.wasm` file to another `.wasm` file
     - More at https://github.com/kowarite/rxt/tree/main/todo/fs.md

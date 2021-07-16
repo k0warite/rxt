@@ -1,12 +1,12 @@
 (module
-    (import "lib" "core::i32::print" (func $print_i32 (param i32)))
+    (import "lib" "core::str::print" (func $print_str (param i32 i32)))
+    (import "env" "mem" (memory 1))
 
-    (func $main
-        (local $hello_world i32)
-        (local.set $hello_world (i32.const "Hello world from RXT Runtime"))
+    (data (i32.const 0) "Hello World from WebAssembly!")
 
-        (call $print_i32 (local.get $hello_world))
+    (func (export "main")
+        i32.const 0
+        i32.const 29
+        call $print_str
     )
-
-    (export "main" (func $main))
 )
