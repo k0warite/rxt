@@ -10,9 +10,7 @@ describe('RXT Runtime', () => {
         await rxt.run();
     });
 
-    /*
     it('Print number `9` on STDOUT', async () => {
         await (new RXT('./bin/test_1.wasm').run());
     });
-    */
 });
