@@ -6,6 +6,8 @@
     "type": "module",
     "types": "./src/export.ts",
     "scripts": {
+        "debug": "node debug/debug.js",
+        "debug-py": "python debug/debug.py",
         "test": "npx mocha",
         "build": "npx tsc",
         "lint": "npm run build -- --noEmit",
@@ -40,9 +42,11 @@
         "assemblyscript": "^0.19.7",
         "mocha": "^9.0.2",
         "prettier": "^2.3.2",
-        "typescript": "^4.3.5"
+        "typescript": "^4.3.5",
+        "wat-wasm": "^1.0.37"
     },
     "dependencies": {
+        "chalk": "^4.1.1",
         "command-line-args": "^5.1.3"
     }
 }

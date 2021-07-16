@@ -8,7 +8,8 @@
         "noImplicitAny": true,
         "outDir": "dist/",
         "removeComments": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true
     },
 
     "include": ["src/**/*"],

@@ -28,23 +28,23 @@ $ npm run build
 ```
 
 ### NPM
-To install this via NPM, you can run one of the following
+You can also install this via NPM. Run one of the following:
 ```sh
 $ npm run -g rxt-runtime # Install globally
 $ npm run -D rxt-runtime # Install this as a runtime dependency
 $ npm run -s rxt-runtime # Install this as a development dependency
 ```
 It is most recommend to install this as a runtime dependecny rather than globally.
-> This module haven't been published to NPM yet since it's still in rapid development
+> This module haven't been published to NPM yet since it's still in rapid development.
 
 # API
-For runtime API documentation, please read the [`API.md`](https://github.com/kowarite/rxt/blob/main/doc/API.md 'API.md') file
+For the runtime API documentation, please read the [`API.md`](https://github.com/kowarite/rxt/blob/main/doc/API.md 'API.md') file.
 
 # Example
-For examples, you can check the [`example`]() folder
+For some examples, you can check the [`example`]() folder.
 
 # Support
-To show your support, add the following to your `README.md`
+To show your support, add the following to your `README.md`:
 ```md
 ![rxt](https://github.com/kowarite/rxt/blob/main/assets/rxt.png?raw=true)
 ![rxt_version](https://github.com/kowarite/rxt/blob/main/assets/rxt_version.png?raw=true)
