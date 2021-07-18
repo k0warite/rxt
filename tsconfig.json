@@ -14,11 +14,14 @@
 
     "include": ["src/**/*"],
     "exclude": [
-        "dist/",
-        "node_modules/",
+        ".vscode/",
+        "assets/",
+        "bin/",
+        "debug/",
+        "doc/",
         "example/",
+        "node_modules/",
         "test/",
-        "lib",
-        "doc/"
+        "todo/"
     ]
 }

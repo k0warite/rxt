@@ -1,6 +1,14 @@
+.vscode/
+assets/
+bin/
+debug/
+doc/
+example/
 node_modules/
 test/
-example/
+todo/
+
+.prettierrc
+.todo
 build.py
-assets/
-debug/
+tsconfig.json

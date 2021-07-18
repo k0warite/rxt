@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { RuntimeOptions } from '../../types/index';
 import { libLoader } from './lib_loader.js';
 import { abort, trace } from './internal.js';
-import { debug } from './logger.js';
+import { debug, error } from './logger.js';
 
 export class RXT {
     public static map: Map<string, any> = new Map();
@@ -11,7 +11,7 @@ export class RXT {
 
     /**
      * @param wasm 
-     * The WebAssembly bytecode or the relative path to the `.wasm` file
+     * The WebAssembly bytecode or the path to the `.wasm` file
      * 
      * @param option 
      * The WebAssembly runtime options
@@ -37,6 +37,9 @@ export class RXT {
         if (!option) option = {};
         this.option = option;
         this.wasm = wasm;
+
+        if (this.option.memory instanceof WebAssembly.Memory) RXT.map.set('memory', this.option.memory);
+        if (this.option.table instanceof WebAssembly.Table) RXT.map.set('table', this.option.table);
     }
 
     /**
@@ -53,8 +56,6 @@ export class RXT {
         imports.env.abort = abort;
         imports.env.trace = trace;
 
-        RXT.map.set('memory', this.option.memory);
-
         for (const lib of await libLoader()) {
             imports.lib[lib.name] = lib.fn;
         }
@@ -62,7 +63,12 @@ export class RXT {
         const { exports } = new WebAssembly.Instance(new WebAssembly.Module(this.wasm), imports);
         
         if (exports.main && typeof exports.main === 'function') {
-            await exports.main();
+            const result = await exports.main();
+
+            if (typeof result === 'number' && result !== 0) {
+                error(`Process exited with exit code: ${result}`);
+                return process.exit(result);
+            }
         } else {
             const wasmCode: Array<string> = [];
             this.wasm.forEach(x => wasmCode.push(x.toString(16).length === 1 ? '0x' + x.toString(16) + '0': '0x' + x.toString(16)));

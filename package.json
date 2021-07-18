@@ -1,6 +1,6 @@
 {
     "name": "rxt-runtime",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "An easy to use WASM runtime.",
     "main": "./dist/api.js",
     "type": "module",
@@ -9,6 +9,9 @@
         "debug": "node debug/debug.js",
         "debug-py": "python debug/debug.py",
         "test": "npx mocha",
+        "pretest": "npm run build",
+        "publish": "npm publish --scope=public",
+        "prepublish": "npm run build",
         "build": "npx tsc",
         "lint": "npm run build -- --noEmit",
         "watch": "npm run build -- --watch",
@@ -16,7 +19,7 @@
         "wasm": "python asbuild.py"
     },
     "bin": {
-        "rxt": "./dist/cli.js"
+        "rxt": "./cli/index.js"
     },
     "repository": {
         "type": "git",
@@ -37,9 +40,7 @@
     },
     "homepage": "https://github.com/Farxism/rxt#readme",
     "devDependencies": {
-        "@types/command-line-args": "^5.0.1",
         "@types/node": "^16.3.1",
-        "assemblyscript": "^0.19.7",
         "mocha": "^9.0.2",
         "prettier": "^2.3.2",
         "typescript": "^4.3.5",
@@ -47,6 +48,7 @@
     },
     "dependencies": {
         "chalk": "^4.1.1",
-        "command-line-args": "^5.1.3"
+        "commander": "^8.0.0",
+        "minimist": "^1.2.5"
     }
 }
