@@ -1,6 +1,6 @@
 {
     "name": "rxt-runtime",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "An easy to use WASM runtime.",
     "main": "./dist/api.js",
     "type": "module",
