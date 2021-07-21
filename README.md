@@ -1,7 +1,7 @@
 <h1 align="center">RXT</h1>
 <p align="center">
-    <img src="https://github.com/kowarite/rxt/blob/main/assets/rxt.png?raw=true" alt="RXT Badge"/>
-    <img src="https://github.com/kowarite/rxt/blob/main/assets/rxt_version.png?raw=true" alt="RXT Version"/>
+    <img src="https://github.com/k0warite/rxt/blob/main/assets/rxt.png?raw=true" alt="RXT Badge"/>
+    <img src="https://github.com/k0warite/rxt/blob/main/assets/rxt_version.png?raw=true" alt="RXT Version"/>
 </p>
 <p align="center">
     An easy to use WASM runtime.
@@ -16,7 +16,7 @@
 ### Cloning
 To clone this project to your local machine, you will need to use `git`
 ```sh
-$ git clone git@github.com:kowarite/rxt.git
+$ git clone git@github.com:k0warite/rxt.git
 $ cd rxt
 ```
 
@@ -37,14 +37,14 @@ It is most recommend to install this as a runtime dependecny rather than globall
 > This module haven't been published to NPM yet since it's still in rapid development.
 
 # API
-For the runtime API documentation, please read the [`API.md`](https://github.com/kowarite/rxt/blob/main/doc/API.md 'API.md') file.
+For the runtime API documentation, please read the [`API.md`](https://github.com/k0warite/rxt/blob/main/doc/API.md 'API.md') file.
 
 # Example
-For some examples, you can check the [`example`](https://github.com/kowarite/rxt/blob/main/example) folder.
+For some examples, you can check the [`example`](https://github.com/k0warite/rxt/blob/main/example) folder.
 
 # Support
 To show your support, add the following to your `README.md`:
 ```md
-![rxt](https://github.com/kowarite/rxt/blob/main/assets/rxt.png?raw=true)
-![rxt_version](https://github.com/kowarite/rxt/blob/main/assets/rxt_version.png?raw=true)
+![rxt](https://github.com/k0warite/rxt/blob/main/assets/rxt.png?raw=true)
+![rxt_version](https://github.com/k0warite/rxt/blob/main/assets/rxt_version.png?raw=true)
 ```

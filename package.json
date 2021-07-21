@@ -1,6 +1,6 @@
 {
     "name": "rxt-runtime",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "An easy to use WASM runtime.",
     "main": "./dist/api.js",
     "type": "module",
@@ -9,8 +9,6 @@
         "debug": "node debug/debug.js",
         "test": "npx mocha",
         "pretest": "npm run build",
-        "publish": "npm publish --access=public",
-        "prepublish": "npm run build",
         "build": "npx tsc",
         "lint": "npm run build -- --noEmit",
         "watch": "npm run build -- --watch",
@@ -21,7 +19,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/kowarite/rxt.git"
+        "url": "git+https://github.com/k0warite/rxt.git"
     },
     "keywords": [
         "rxt",
@@ -31,12 +29,12 @@
     "engines": {
         "node": ">=12"
     },
-    "author": "kowarite",
+    "author": "k0warite",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/kowarite/rxt/issues"
+        "url": "https://github.com/k0warite/rxt/issues"
     },
-    "homepage": "https://github.com/kowarite/rxt#readme",
+    "homepage": "https://github.com/k0warite/rxt#readme",
     "devDependencies": {
         "@types/node": "^16.3.1",
         "mocha": "^9.0.2",
